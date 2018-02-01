@@ -8,9 +8,9 @@ img {
   margin: 0 auto;
 }
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
+// .navbar-brand {
+//   font-size: inherit;
+// }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -56,7 +56,7 @@ section {
   @extend .card;
   @extend .col-md-9;
   padding-bottom: 40px;
-  @extend .bg-faded;
+  @extend .bg-light;
   @extend .small;
 }
 .authform .right {
