@@ -1,2 +1,4 @@
 <%# add navigation links to this file %>
-<li class='nav-item'><%= link_to 'About', page_path('about'), class: 'nav-link' %></li>
+<% if @show_contrib_button %>
+  <%= link_to 'Contribute!', '#contribution_form_wrapper', class: 'btn btn-warning', data: {'toggle' => 'modal'} %>
+<% end %>

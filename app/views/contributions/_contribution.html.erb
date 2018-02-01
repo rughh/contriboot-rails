@@ -1,0 +1,23 @@
+<article class="row mb-5 align-items-center">
+  <div class="col-sm-2" style="text-align: center">
+    <% if contribution.user.present? %>
+      <%= image_tag contribution.user.avatar, class: 'avatar' %>
+      <div class="username"><%= contribution.user.name %></div>
+    <% else %>
+    DELETED USER
+    <% end %>
+  </div>
+  <div class="col-sm p-2 contribution-bg">
+    <h3><%= contribution.title %></h3>
+    <%= simple_format contribution.description %>
+  </div>
+  <div class="col-sm-2" style="text-align: center">
+    <% if user_signed_in? %>
+      <% if contribution.voters.exists?(current_user.id) %>
+        <%= button_to pluralize(contribution.votes.size, 'Vote', 'Votes'), toggle_vote_contribution_path(contribution), method: :patch, class: 'btn btn-small btn-success' %>
+      <% else %>
+      <%= button_to pluralize(contribution.votes.size, 'Vote', 'Votes'), toggle_vote_contribution_path(contribution), method: :patch, class: 'btn btn-small btn-secondary' %>
+      <% end %>
+    <% end %>
+  </div>
+</article>

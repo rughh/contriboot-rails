@@ -1,5 +1,14 @@
 // import the CSS framework
 // Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
+
+$primary: #67519D;
+$warning: #EA605F;
+
+$body-bg: #DBD4C4;
+$contribution-bg: lighten($body-bg, 10%);
+
+
+
 @import "bootstrap";
 
 // make all images responsive by default
@@ -36,7 +45,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  margin-top: 30px; // accommodate the navbar
+  margin-top: 100px; // accommodate the navbar
 }
 
 section {
@@ -80,4 +89,20 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-sm;
+}
+
+img.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.section-title {
+  border-left: 10px solid $warning;
+  color: $primary;
+  padding-left: 10px;
+}
+
+.contribution-bg {
+  background: $contribution-bg;
 }
