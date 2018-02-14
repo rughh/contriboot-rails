@@ -14,13 +14,15 @@
             <div>
               <div>This is a:</div>
               <div class="form-check form-check-inline">
-                <%= f.radio_button :contribution_type, 'contribution', class: 'form-check-input' %> <label for="contribution_contribution_type_contribution" class="form-check-label">Contribution</label>
+                <%= f.radio_button :contribution_type, 'contribution', class: 'form-check-input', data: {'show-explainer' => 'contribution'} %> <label for="contribution_contribution_type_contribution" class="form-check-label">Contribution</label>
 
               </div>
               <div class="form-check form-check-inline">
-                <%= f.radio_button :contribution_type, 'interest', class: 'form-check-input' %> <label for="contribution_contribution_type_interest" class="form-check-label">Interest</label>
+                <%= f.radio_button :contribution_type, 'interest', class: 'form-check-input', data: {'show-explainer' => 'interest'} %> <label for="contribution_contribution_type_interest" class="form-check-label">Interest</label>
               </div>
             </div>
+            <div class="contribution-type-explainer" data-show-if="contribution">Use this if you want to give a talk or workshop on the subject.</div>
+            <div class="contribution-type-explainer" data-show-if="interest">Use this if you want to hear a talk about the subject.</div>
             <div class="form-group">
               <label for="contribution_title">Title:</label>
               <%= f.text_field :title, class: 'form-control ' + valid_class(@contribution, 'title'), required: true %>
