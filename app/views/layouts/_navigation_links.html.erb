@@ -1,4 +1,8 @@
 <%# add navigation links to this file %>
 <% if @show_contrib_button %>
-  <%= link_to 'Contribute!', '#contribution_form_wrapper', class: 'btn btn-warning', data: {'toggle' => 'modal'} %>
+  <% if user_signed_in? %>
+    <%= link_to 'Contribute!', '#contribution_form_wrapper', class: 'btn btn-warning', data: {'toggle' => 'modal'} %>
+  <% else %>
+    <%= link_to 'Contribute!', signin_path, class: 'btn btn-warning' %>
+  <% end %>
 <% end %>

@@ -18,6 +18,8 @@
       <% else %>
       <%= button_to pluralize(contribution.votes.size, 'Vote', 'Votes'), toggle_vote_contribution_path(contribution), method: :patch, class: 'btn btn-small btn-secondary' %>
       <% end %>
+    <% else %>
+      <%= link_to pluralize(contribution.votes.size, 'Vote', 'Votes'), signin_path, class: 'btn btn-small btn-secondary' %>
     <% end %>
   </div>
 </article>

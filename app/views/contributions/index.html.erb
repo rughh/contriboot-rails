@@ -21,8 +21,8 @@
                 <%= f.radio_button :contribution_type, 'interest', class: 'form-check-input', data: {'show-explainer' => 'interest'} %> <label for="contribution_contribution_type_interest" class="form-check-label">Interest</label>
               </div>
             </div>
-            <div class="contribution-type-explainer" data-show-if="contribution">Use this if you want to give a talk or workshop on the subject.</div>
-            <div class="contribution-type-explainer" data-show-if="interest">Use this if you want to hear a talk about the subject.</div>
+            <small class="contribution-type-explainer form-text text-muted" data-show-if="contribution">Use this if you want to give a talk or workshop on the subject.</small>
+            <small class="contribution-type-explainer form-text text-muted" data-show-if="interest">Use this if you want to hear a talk about the subject.</small>
             <div class="form-group">
               <label for="contribution_title">Title:</label>
               <%= f.text_field :title, class: 'form-control ' + valid_class(@contribution, 'title'), required: true %>
@@ -54,4 +54,9 @@
 <% end %>
 <%= render partial: 'contribution', collection: @interests %>
 <hr>
-Want to add a contribution or an interest? What <%= link_to 'are you waiting for?', '#contribution_form_wrapper', data: {toggle: 'modal'} %>
+Want to add a contribution or an interest? What
+<% if user_signed_in? %>
+  <%= link_to 'are you waiting for?', '#contribution_form_wrapper', data: {toggle: 'modal'} %>
+<% else %>
+  <%= link_to 'are you waiting for?', signin_path %>
+<% end %>

@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body data-logged-in-as="<%= current_user.try(:auth_id) %>">
     <header>
       <%= render 'layouts/navigation' %>
     </header>

@@ -11,4 +11,8 @@ class User < ApplicationRecord
     end
   end
 
+  def auth_id
+    "#{provider}-#{uid}"
+  end
+
 end

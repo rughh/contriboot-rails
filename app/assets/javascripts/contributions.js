@@ -7,11 +7,12 @@ document.addEventListener("turbolinks:load", function() {
   // });
   $('#contribution_form_wrapper').on('shown.bs.modal', function () {
     $('#contribution_title').trigger('focus');
+    $('[data-show-explainer="contribution"]').click();
+    $('[data-show-if]').hide();
     $('[data-show-if="contribution"]').show();
   }).each(function() {
     var $modal = $(this);
     if ($modal.data('open-immediately')) {
-      console.log("OPEN!");
       $(this).modal('show');
     }
   });
@@ -22,5 +23,8 @@ document.addEventListener("turbolinks:load", function() {
     $('[data-show-if]').hide();
     $('[data-show-if="' + which +'"]').show();
   });
+
+
+  $([])
 
 });
