@@ -1,4 +1,4 @@
-def dl(pdf, title, value, width, height)
+def dl(pdf, title, value, width, height, font_size: 16)
   pdf.bounding_box [0, pdf.cursor + 5], width: width, height: height * 24 + 15 do
     pdf.stroke_bounds
     pdf.move_down 5
@@ -9,7 +9,7 @@ def dl(pdf, title, value, width, height)
     end
     pdf.font 'OpenSans', style: :normal
     pdf.move_down 5
-    pdf.font_size 16
+    pdf.font_size font_size
     pdf.indent 5 do
       pdf.text(value || ' ')
     end
@@ -50,7 +50,7 @@ def render_contribution(pdf, contribution, interest: false)
     end
   end
   pdf.move_down 10
-  dl(pdf, "Description:", contribution.description, pdf.bounds.width, 10)
+  dl(pdf, "Description:", contribution.description, pdf.bounds.width, 12, font_size: 12)
   pdf.move_down 5
   pdf.bounding_box [0, pdf.cursor], width: pdf.bounds.width, height: pdf.cursor do
     pdf.stroke_bounds
