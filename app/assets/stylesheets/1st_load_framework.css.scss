@@ -48,6 +48,16 @@ main {
   margin-top: 100px; // accommodate the navbar
 }
 
+.page-footer {
+  margin-top: 3em;
+  background: #fff;
+  padding-top: 2em;
+}
+.page-footer--inner {
+  @extend .container;
+  min-height: 200px;
+}
+
 section {
   @extend .row;
   margin-top: 20px;
@@ -109,4 +119,8 @@ img.avatar {
 
 .contribution-type-explainer {
   display: none;
+}
+
+.depfu-logo {
+  width: 200px;
 }
