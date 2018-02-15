@@ -1,50 +1,13 @@
-Contriboot Rails
-================
+# Contriboot Rails
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This is a contribution tool built specifically for the Ruby Unconf Hamburg 2018. It is heavily inspired by the [JSUnconf.eu Contriboot](https://github.com/jsunconf/2017.contriboot) but written from scratch in Ruby on Rails, as it should be :)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+It was generated using a [Rails App Composer](https://github.com/RailsApps/rails_apps_composer) template for GitHub authentication and also for styling via Bootstrap/Sass.
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+If you find any problems, please [create an issue](https://github.com/rughh/contriboot-rails/issues) or send a pull request.
 
-Problems? Issues?
------------
+## Hosting
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+Hosting is sponsored by [Depfu](https://depfu.com) and the app runs on a hobby dyno on Heroku.
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.5
-- Rails 5.1.4
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+If you need deployment permissions, please contact @halfbyte on Slack.
