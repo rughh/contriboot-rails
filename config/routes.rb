@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/print' => 'printout#index', as: :print
+
   root to: 'contributions#index'
 
   get '/auth/:provider/callback' => 'sessions#create'

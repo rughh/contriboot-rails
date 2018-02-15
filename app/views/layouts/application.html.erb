@@ -17,11 +17,12 @@
        <%= yield %>
     </main>
     <footer class="page-footer">
-      <div class="page-footer--inner"
-      <p>Organized by <a href="https://www.bootev.org/">BOOT e.V.</a> (<a href="http://rubyunconf.eu/imprint.html">Imprint/Impressum</a>)</p>
-
-      <p><a href="https://depfu.com/">Hosting sponsored by</a></p>
-      <p><a href="https://depfu.com/"><%= image_tag 'depfu-left-white.png', alt: 'Depfu', class: 'depfu-logo' %></a></p>
+      <div class="page-footer--inner">
+        <p>Organized by <a href="https://www.bootev.org/">BOOT e.V.</a> (<a href="http://rubyunconf.eu/imprint.html">Imprint/Impressum</a>)</p>
+        <p><a href="https://depfu.com/">Hosting sponsored by</a></p>
+        <p><a href="https://depfu.com/"><%= image_tag 'depfu-left-white.png', alt: 'Depfu', class: 'depfu-logo' %></a></p>
+        <p><%= link_to '¯\_(ツ)_/¯', print_path(format: :pdf) %></p>
+      </div>
     </footer>
   </body>
 </html>
