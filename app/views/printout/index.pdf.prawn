@@ -3,9 +3,11 @@ def dl(pdf, title, value, width, height)
     pdf.stroke_bounds
     pdf.move_down 5
     pdf.indent 5 do
+      pdf.font 'OpenSans', style: :italic
       pdf.font_size 8
       pdf.text title
     end
+    pdf.font 'OpenSans', style: :normal
     pdf.move_down 5
     pdf.font_size 16
     pdf.indent 5 do
@@ -16,6 +18,7 @@ end
 
 def render_contribution(pdf, contribution, interest: false)
   pdf.start_new_page
+  pdf.font 'OpenSans', style: :normal
   left_width = pdf.bounds.width * 0.75
   right_width = pdf.bounds.width - (left_width)
   if interest
@@ -41,24 +44,35 @@ def render_contribution(pdf, contribution, interest: false)
     pdf.move_down 5
     pdf.indent 5 do
       pdf.font_size 8
-      pdf.text "Talk #"
+      pdf.font 'OpenSans', style: :italic
+      pdf.text "Talk #:"
+      pdf.font 'OpenSans', style: :normal
     end
   end
   pdf.move_down 10
-  dl(pdf, "Description", contribution.description, pdf.bounds.width, 10)
+  dl(pdf, "Description:", contribution.description, pdf.bounds.width, 10)
   pdf.move_down 5
   pdf.bounding_box [0, pdf.cursor], width: pdf.bounds.width, height: pdf.cursor do
     pdf.stroke_bounds
     pdf.move_down 5
     pdf.indent 5 do
       pdf.font_size 8
-      pdf.text "Votes"
+      pdf.font 'OpenSans', style: :italic
+      pdf.text "Votes:"
     end
     pdf.svg IO.read(File.join(Rails.root, 'app/assets/images/UNCONF_GREY.svg')), position: :center, vposition: :center
   end
 end
 
+
 prawn_document do |pdf|
+  pdf.font_families.update('OpenSans' => {
+    bold: File.join(Rails.root, 'app/assets/fonts/open-sans/OpenSans-Bold.ttf'),
+    italic: File.join(Rails.root, 'app/assets/fonts/open-sans/OpenSans-Italic.ttf'),
+    normal: File.join(Rails.root, 'app/assets/fonts/open-sans/OpenSans-Regular.ttf'),
+    bold_italic: File.join(Rails.root, 'app/assets/fonts/open-sans/OpenSans-BoldItalic.ttf')
+  })
+
   @contributions.each do |contribution|
     render_contribution(pdf, contribution)
   end
