@@ -3,8 +3,8 @@ class ContributionsController < ApplicationController
   def index
     @show_contrib_button = true
     @show_contrib_form = false
-    @contributions = Contribution.contributions
-    @interests = Contribution.interests
+    @contributions = Contribution.contributions.order(created_at: :desc)
+    @interests = Contribution.interests.order(created_at: :desc)
     @contribution = Contribution.new(contribution_type: 'contribution')
   end
 
