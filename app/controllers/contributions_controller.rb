@@ -1,5 +1,6 @@
 class ContributionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+
   def index
     @show_contrib_button = true
     @show_contrib_form = false
@@ -20,6 +21,19 @@ class ContributionsController < ApplicationController
     end
   end
 
+  def update
+    @contribution = current_user.contributions.find(params[:id])
+    if @contribution.update(contribution_params)
+      redirect_to contributions_path, notice: 'Updated!'
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @contribution = current_user.contributions.find(params[:id])
+  end
+
   def toggle_vote
     @contribution = Contribution.find(params[:id])
     if @contribution.voters.exists?(current_user.id)
@@ -29,7 +43,6 @@ class ContributionsController < ApplicationController
     end
     redirect_to contributions_path
   end
-
 
   private
 
