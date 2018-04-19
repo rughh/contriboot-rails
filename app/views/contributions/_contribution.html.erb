@@ -1,4 +1,4 @@
-<article class="row mb-5 align-items-center">
+<article id="<%= contribution.id %>" class="row mb-5 align-items-center">
   <div class="col-sm-2" style="text-align: center">
     <% if contribution.user.present? %>
       <%= image_tag contribution.user.avatar, class: 'avatar' %>
