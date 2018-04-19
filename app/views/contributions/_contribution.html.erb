@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <div class="col-sm p-2 contribution-bg">
-    <h3 id="<%= "#c_#{contribution.id}"%>"><%= link_to contribution.title, "#c_#{contribution.id}" %></h3>
+    <h3 id="c_<%= contribution.id %>"><%= link_to contribution.title, "#c_#{contribution.id}" %></h3>
     <%= simple_format contribution.description %>
   </div>
   <div class="col-sm-2" style="text-align: center">
