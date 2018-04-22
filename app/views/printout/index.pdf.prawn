@@ -79,4 +79,7 @@ prawn_document do |pdf|
   @interests.each do |contribution|
     render_contribution(pdf, contribution, interest: true)
   end
+  # add a blank page at the end
+  render_contribution(pdf, Contribution.new)
+
 end
