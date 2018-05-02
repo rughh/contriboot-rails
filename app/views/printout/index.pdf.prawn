@@ -52,6 +52,7 @@ def render_contribution(pdf, contribution, interest: false)
   pdf.move_down 10
   dl(pdf, "Description:", contribution.description, pdf.bounds.width, 12, font_size: 12)
   pdf.move_down 5
+  pdf.bounds.width
   pdf.bounding_box [0, pdf.cursor], width: pdf.bounds.width, height: pdf.cursor do
     pdf.stroke_bounds
     pdf.move_down 5
@@ -60,8 +61,20 @@ def render_contribution(pdf, contribution, interest: false)
       pdf.font 'OpenSans', style: :italic
       pdf.text "Votes:"
     end
+    circle_size = pdf.bounds.width / 17
+    circle_spacing = pdf.bounds.width / 15
     pdf.svg IO.read(File.join(Rails.root, 'app/assets/images/UNCONF_GREY.svg')), position: :center, vposition: :center
+    15.times do |x|
+      10.times do |y|
+        if x > 0 || y < 9
+          pdf.stroke_circle([x * circle_spacing + (circle_spacing / 2), y * circle_spacing + (circle_spacing / 2)], circle_size / 2)
+        end
+      end
+    end
+
   end
+
+
 end
 
 
