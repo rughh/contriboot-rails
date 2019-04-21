@@ -3,11 +3,17 @@
 one:
   title: MyString
   description: MyText
-  contribution_type: MyString
-  user_id: 1
+  contribution_type: contribution
+  user: valid_user
 
 two:
-  title: MyString
+  title: The other proposal
   description: MyText
-  contribution_type: MyString
-  user_id: 1
+  contribution_type: contribution
+  user: other_user
+
+interest:
+  title: The other proposal
+  description: MyText
+  contribution_type: interest
+  user: other_user

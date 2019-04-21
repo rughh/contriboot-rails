@@ -1,0 +1,11 @@
+valid_user:
+  name: Jan Krutisch
+  provider: github
+  uid: halfbyte
+  avatar: https://github.com/halfbyte.png
+
+other_user:
+  name: Peter
+  provider: github
+  uid: phoet
+  avatar: https://github.com/phoet.png
