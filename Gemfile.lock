@@ -138,7 +138,7 @@ GEM
     prawn (2.2.2)
       pdf-core (~> 0.7.0)
       ttfunk (~> 1.5)
-    prawn-rails (1.0.1)
+    prawn-rails (1.2.0)
       prawn
       prawn-table
       rails (>= 3.1.0)
