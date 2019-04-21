@@ -18,10 +18,12 @@ You should see the app running at <http://0.0.0.0:3000>
 
 ![image](https://user-images.githubusercontent.com/170145/39667699-3bb4cb0c-50bc-11e8-8e67-e9bbae84e5e1.png)
 
+To add GitHub authentication locally, you'll need to create a GitHub OAuth app (go to Settings/Developer settings/OAuth Apps on GitHub and click "new OAuth app"), with "http://localhost:3000/auth/github/callback" as the Authorization Callback URL. Every other setting is irrelevant, just type in some useful stuff. You need to jot down the Client ID and Client Secret and then create an .env file in the project root, with the following content:
 
-- MISSING: [github auth how does it work]
-
-
+```
+GH_PROVIDER_KEY=#{client_id}
+GH_PROVIDER_SECRET=#{client secret}
+```
 
 ## Hosting
 
