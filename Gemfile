@@ -36,7 +36,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-github'
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.1'
 
 
 group :development do
