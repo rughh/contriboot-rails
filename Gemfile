@@ -3,6 +3,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
 ruby '2.4.5'
 gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.7'
@@ -13,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'prawn-svg'
 gem 'prawn-rails', '~> 1.0'
+gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
