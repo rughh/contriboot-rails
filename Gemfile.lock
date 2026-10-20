@@ -79,7 +79,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    crass (1.0.4)
+    crass (1.0.7)
     css_parser (1.7.0)
       addressable
     dotenv (2.7.2)
